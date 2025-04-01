@@ -436,32 +436,34 @@ function initCart() {
   }
 
   // Add to cart functionality for "Add to Cart" buttons throughout the site
-  const addToCartBtns = document.querySelectorAll(".add-to-cart-btn");
+  const addToCartBtns = document.querySelectorAll(".btn-add-to-cart");
+  console.log("Found", addToCartBtns.length, "add to cart buttons");
+
   if (addToCartBtns.length) {
     addToCartBtns.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
+      btn.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
+        console.log("Add to cart clicked");
 
-        // Get product details
-        const productCard = btn.closest(".product-card");
-        if (!productCard) return;
+        // Get product details from data attributes
+        const productId = this.dataset.productId;
+        const productName = this.dataset.productName;
+        const productPrice = this.dataset.productPrice;
+        const productImage = this.dataset.productImage;
 
-        const productImage = productCard.querySelector("img").src;
-        const productName = productCard.querySelector(
-          ".product-card__title"
-        ).textContent;
-        const productPrice = productCard.querySelector(
-          ".product-card__price"
-        ).textContent;
-        const productId =
-          btn.dataset.productId || Math.random().toString(36).substring(2, 15);
+        console.log("Product details:", productId, productName, productPrice);
+
+        if (!productId || !productName || !productPrice || !productImage) {
+          console.error("Missing product data attributes");
+          return;
+        }
 
         // Create product object
         const product = {
           id: productId,
           name: productName,
-          price: productPrice,
+          price: "$" + productPrice,
           image: productImage,
         };
 
@@ -470,6 +472,44 @@ function initCart() {
       });
     });
   }
+
+  // Add direct click handler on document to catch any dynamically added buttons
+  document.addEventListener("click", function (e) {
+    if (
+      e.target.classList.contains("btn-add-to-cart") ||
+      e.target.closest(".btn-add-to-cart")
+    ) {
+      const btn = e.target.classList.contains("btn-add-to-cart")
+        ? e.target
+        : e.target.closest(".btn-add-to-cart");
+
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("Add to cart clicked (delegated handler)");
+
+      // Get product details from data attributes
+      const productId = btn.dataset.productId;
+      const productName = btn.dataset.productName;
+      const productPrice = btn.dataset.productPrice;
+      const productImage = btn.dataset.productImage;
+
+      if (!productId || !productName || !productPrice || !productImage) {
+        console.error("Missing product data attributes");
+        return;
+      }
+
+      // Create product object
+      const product = {
+        id: productId,
+        name: productName,
+        price: "$" + productPrice,
+        image: productImage,
+      };
+
+      // Add to cart
+      addToCart(product);
+    }
+  });
 }
 
 function addToCart(product) {
