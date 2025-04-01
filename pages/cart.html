@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart | MINIMA</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="logo">
+            <a href="../index.html">MINIMA</a>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="catalog.html" class="nav__link">Shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="about.html" class="nav__link">About</a>
+              </li>
+              <li class="nav__item">
+                <a href="contact.html" class="nav__link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__actions">
+            <button class="theme-toggle" aria-label="Toggle theme">
+              <svg
+                class="sun-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg
+                class="moon-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                ></path>
+              </svg>
+            </button>
+            <button class="icon-btn search-btn" aria-label="Search">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+            <a
+              href="profile.html"
+              class="icon-btn account-btn"
+              aria-label="Account"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </a>
+            <a
+              href="cart.html"
+              class="icon-btn cart-btn active"
+              aria-label="Cart"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                ></path>
+              </svg>
+              <span class="cart-count">3</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="cart-page">
+      <div class="container">
+        <div class="page-header">
+          <h1>Your Cart</h1>
+          <div class="breadcrumbs">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <span>Cart</span>
+          </div>
+        </div>
+
+        <div class="cart-layout">
+          <!-- Cart Items List -->
+          <div class="cart-items">
+            <div class="cart-card">
+              <div class="cart-header">
+                <h2>Shopping Cart (3 items)</h2>
+              </div>
+
+              <div class="cart-item">
+                <div class="cart-item__image">
+                  <img
+                    src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1072&q=80"
+                    alt="Minimalist Linen Shirt"
+                  />
+                </div>
+                <div class="cart-item__details">
+                  <h3>Minimalist Linen Shirt</h3>
+                  <p class="cart-item__meta">Color: White | Size: M</p>
+                  <div class="cart-item__price-mobile">$59.00</div>
+                  <div class="cart-item__actions">
+                    <button class="text-btn move-to-wishlist">
+                      Move to wishlist
+                    </button>
+                    <button class="text-btn remove-item">Remove</button>
+                  </div>
+                </div>
+                <div class="cart-item__quantity">
+                  <div class="quantity-selector">
+                    <button
+                      class="quantity-btn decrement"
+                      aria-label="Decrease quantity"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </button>
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      max="10"
+                      class="quantity-input"
+                    />
+                    <button
+                      class="quantity-btn increment"
+                      aria-label="Increase quantity"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="cart-item__price">$59.00</div>
+              </div>
+
+              <div class="cart-item">
+                <div class="cart-item__image">
+                  <img
+                    src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                    alt="Relaxed Fit Trousers"
+                  />
+                </div>
+                <div class="cart-item__details">
+                  <h3>Relaxed Fit Trousers</h3>
+                  <p class="cart-item__meta">Color: Black | Size: 30</p>
+                  <div class="cart-item__price-mobile">$75.00</div>
+                  <div class="cart-item__actions">
+                    <button class="text-btn move-to-wishlist">
+                      Move to wishlist
+                    </button>
+                    <button class="text-btn remove-item">Remove</button>
+                  </div>
+                </div>
+                <div class="cart-item__quantity">
+                  <div class="quantity-selector">
+                    <button
+                      class="quantity-btn decrement"
+                      aria-label="Decrease quantity"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </button>
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      max="10"
+                      class="quantity-input"
+                    />
+                    <button
+                      class="quantity-btn increment"
+                      aria-label="Increase quantity"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="cart-item__price">$75.00</div>
+              </div>
+
+              <div class="cart-item">
+                <div class="cart-item__image">
+                  <img
+                    src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                    alt="Cotton Blend T-Shirt"
+                  />
+                </div>
+                <div class="cart-item__details">
+                  <h3>Cotton Blend T-Shirt</h3>
+                  <p class="cart-item__meta">Color: Gray | Size: S</p>
+                  <div class="cart-item__price-mobile">$35.00</div>
+                  <div class="cart-item__actions">
+                    <button class="text-btn move-to-wishlist">
+                      Move to wishlist
+                    </button>
+                    <button class="text-btn remove-item">Remove</button>
+                  </div>
+                </div>
+                <div class="cart-item__quantity">
+                  <div class="quantity-selector">
+                    <button
+                      class="quantity-btn decrement"
+                      aria-label="Decrease quantity"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </button>
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      max="10"
+                      class="quantity-input"
+                    />
+                    <button
+                      class="quantity-btn increment"
+                      aria-label="Increase quantity"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="cart-item__price">$35.00</div>
+              </div>
+
+              <div class="cart-actions">
+                <button class="btn btn--outline">Continue Shopping</button>
+                <button class="btn btn--primary">Update Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="cart-summary">
+            <div class="cart-card">
+              <h2>Order Summary</h2>
+              <div class="summary-item">
+                <span>Subtotal</span>
+                <span>$169.00</span>
+              </div>
+              <div class="summary-item">
+                <span>Shipping</span>
+                <span>$0.00</span>
+              </div>
+              <div class="summary-item">
+                <span>Tax</span>
+                <span>$13.52</span>
+              </div>
+              <div class="summary-divider"></div>
+              <div class="summary-item total">
+                <span>Total</span>
+                <span>$182.52</span>
+              </div>
+
+              <div class="promo-code">
+                <h3>Promo Code</h3>
+                <div class="promo-form">
+                  <input type="text" placeholder="Enter promo code" />
+                  <button class="btn btn--secondary">Apply</button>
+                </div>
+              </div>
+
+              <button class="btn btn--primary btn--block checkout-btn">
+                Proceed to Checkout
+              </button>
+
+              <div class="checkout-options">
+                <p>Express Checkout</p>
+                <div class="payment-options">
+                  <button class="payment-option">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png"
+                      alt="PayPal"
+                    />
+                  </button>
+                  <button class="payment-option">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png"
+                      alt="Visa"
+                    />
+                  </button>
+                  <button class="payment-option">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2015/09/14/16/59/apple-pay-940261_1280.png"
+                      alt="Apple Pay"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recently viewed products -->
+        <section class="recently-viewed">
+          <h2>Recently Viewed</h2>
+          <div class="products-grid small-grid">
+            <div class="product-card">
+              <div class="product-card__image">
+                <img
+                  src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                  alt="Premium Wool Coat"
+                />
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Premium Wool Coat</h3>
+                <p class="product-card__price">$120.00</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card__image">
+                <img
+                  src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                  alt="Wide-Leg Pants"
+                />
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Wide-Leg Pants</h3>
+                <p class="product-card__price">$85.00</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card__image">
+                <img
+                  src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80"
+                  alt="Leather Jacket"
+                />
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Leather Jacket</h3>
+                <p class="product-card__price">$195.00</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card__image">
+                <img
+                  src="https://images.unsplash.com/photo-1582142306909-195724d0a735?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80"
+                  alt="Summer Dress"
+                />
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__title">Summer Dress</h3>
+                <p class="product-card__price">$65.00</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__column">
+            <div class="logo">MINIMA</div>
+            <p>Modern, minimalist clothing for the conscious consumer.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer__column">
+            <h3>Shop</h3>
+            <ul>
+              <li><a href="catalog.html?category=womens">Women</a></li>
+              <li><a href="catalog.html?category=mens">Men</a></li>
+              <li>
+                <a href="catalog.html?category=accessories">Accessories</a>
+              </li>
+              <li><a href="catalog.html?category=footwear">Footwear</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Sustainability</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2023 MINIMA. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Shared Components -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-overlay__content">
+        <button class="search-overlay__close" aria-label="Close search">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Search for products..."
+            aria-label="Search"
+          />
+          <button type="submit" aria-label="Submit search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </form>
+        <div class="search-results">
+          <!-- Search results will appear here -->
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <div class="mobile-nav__header">
+        <div class="logo">MINIMA</div>
+        <button class="mobile-nav__close" aria-label="Close menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="mobile-nav__content">
+        <ul class="mobile-nav__list">
+          <li class="mobile-nav__item">
+            <a href="catalog.html" class="mobile-nav__link">Shop</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="about.html" class="mobile-nav__link">About</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="contact.html" class="mobile-nav__link">Contact</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="profile.html" class="mobile-nav__link">My Account</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="cart.html" class="mobile-nav__link active">Cart</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="mobile-nav__footer">
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+              ></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Quantity selector functionality
+        const quantitySelectors =
+          document.querySelectorAll(".quantity-selector");
+
+        quantitySelectors.forEach((selector) => {
+          const decrementBtn = selector.querySelector(".decrement");
+          const incrementBtn = selector.querySelector(".increment");
+          const input = selector.querySelector(".quantity-input");
+
+          decrementBtn.addEventListener("click", () => {
+            let value = parseInt(input.value);
+            value = Math.max(1, value - 1);
+            input.value = value;
+            updateTotals();
+          });
+
+          incrementBtn.addEventListener("click", () => {
+            let value = parseInt(input.value);
+            value = Math.min(10, value + 1);
+            input.value = value;
+            updateTotals();
+          });
+
+          input.addEventListener("change", () => {
+            let value = parseInt(input.value);
+            if (isNaN(value) || value < 1) value = 1;
+            if (value > 10) value = 10;
+            input.value = value;
+            updateTotals();
+          });
+        });
+
+        // Remove item functionality
+        const removeButtons = document.querySelectorAll(".remove-item");
+
+        removeButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const cartItem = button.closest(".cart-item");
+            if (cartItem) {
+              cartItem.classList.add("removing");
+              setTimeout(() => {
+                cartItem.remove();
+                updateCartCount();
+                updateTotals();
+
+                // Check if cart is empty
+                const remainingItems = document.querySelectorAll(".cart-item");
+                if (remainingItems.length === 0) {
+                  showEmptyCart();
+                }
+              }, 300);
+            }
+          });
+        });
+
+        // Helper functions
+        function updateCartCount() {
+          const cartCount = document.querySelector(".cart-count");
+          const itemCount = document.querySelectorAll(".cart-item").length;
+
+          if (cartCount) {
+            cartCount.textContent = itemCount.toString();
+          }
+
+          // Update cart items header
+          const cartHeader = document.querySelector(".cart-header h2");
+          if (cartHeader) {
+            cartHeader.textContent = `Shopping Cart (${itemCount} item${
+              itemCount !== 1 ? "s" : ""
+            })`;
+          }
+        }
+
+        function updateTotals() {
+          // In a real app, this would calculate actual totals
+          // For this demo, we'll just simulate it
+          console.log("Totals updated");
+        }
+
+        function showEmptyCart() {
+          const cartItems = document.querySelector(".cart-items");
+          if (cartItems) {
+            cartItems.innerHTML = `
+              <div class="cart-card empty-cart">
+                <div class="empty-cart-message">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                  </svg>
+                  <h2>Your cart is empty</h2>
+                  <p>Looks like you haven't added any items to your cart yet.</p>
+                  <a href="catalog.html" class="btn btn--primary">Continue Shopping</a>
+                </div>
+              </div>
+            `;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

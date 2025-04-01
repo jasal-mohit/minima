@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop All Products | MINIMA</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/catalog.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="logo">
+            <a href="../index.html">MINIMA</a>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="../pages/catalog.html" class="nav__link">Shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="../pages/about.html" class="nav__link">About</a>
+              </li>
+              <li class="nav__item">
+                <a href="../pages/contact.html" class="nav__link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__actions">
+            <button class="theme-toggle" aria-label="Toggle theme">
+              <svg
+                class="sun-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg
+                class="moon-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                ></path>
+              </svg>
+            </button>
+            <button class="icon-btn search-btn" aria-label="Search">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+            <a
+              href="profile.html"
+              class="icon-btn account-btn"
+              aria-label="Account"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </a>
+            <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                ></path>
+              </svg>
+              <span class="cart-count">0</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="catalog-page">
+      <div class="container">
+        <div class="catalog-header">
+          <h1>Shop All Products</h1>
+          <div class="breadcrumbs">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <span>Shop</span>
+          </div>
+        </div>
+
+        <div class="catalog-layout">
+          <!-- Filters Sidebar -->
+          <aside class="filters-sidebar">
+            <div class="filters-card">
+              <div class="filters-header">
+                <h2>Filters</h2>
+                <button class="clear-filters">Clear All</button>
+              </div>
+
+              <div class="filter-group">
+                <h3>Category</h3>
+                <div class="filter-options">
+                  <label class="filter-option">
+                    <input type="checkbox" name="category" value="womens" />
+                    <span>Women's</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" name="category" value="mens" />
+                    <span>Men's</span>
+                  </label>
+                  <label class="filter-option">
+                    <input
+                      type="checkbox"
+                      name="category"
+                      value="accessories"
+                    />
+                    <span>Accessories</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" name="category" value="footwear" />
+                    <span>Footwear</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h3>Price Range</h3>
+                <div class="price-slider">
+                  <div class="range-inputs">
+                    <input
+                      type="range"
+                      min="0"
+                      max="300"
+                      value="0"
+                      class="range-min"
+                    />
+                    <input
+                      type="range"
+                      min="0"
+                      max="300"
+                      value="300"
+                      class="range-max"
+                    />
+                  </div>
+                  <div class="price-inputs">
+                    <div class="price-input">
+                      <span>$</span>
+                      <input type="number" class="min-price" value="0" />
+                    </div>
+                    <span>-</span>
+                    <div class="price-input">
+                      <span>$</span>
+                      <input type="number" class="max-price" value="300" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h3>Color</h3>
+                <div class="color-options">
+                  <label class="color-option" style="--color: #000000">
+                    <input type="checkbox" name="color" value="black" />
+                    <span class="color-swatch"></span>
+                    <span class="color-name">Black</span>
+                  </label>
+                  <label class="color-option" style="--color: #ffffff">
+                    <input type="checkbox" name="color" value="white" />
+                    <span class="color-swatch"></span>
+                    <span class="color-name">White</span>
+                  </label>
+                  <label class="color-option" style="--color: #a78bfa">
+                    <input type="checkbox" name="color" value="lavender" />
+                    <span class="color-swatch"></span>
+                    <span class="color-name">Lavender</span>
+                  </label>
+                  <label class="color-option" style="--color: #d1d5db">
+                    <input type="checkbox" name="color" value="gray" />
+                    <span class="color-swatch"></span>
+                    <span class="color-name">Gray</span>
+                  </label>
+                  <label class="color-option" style="--color: #bca37f">
+                    <input type="checkbox" name="color" value="beige" />
+                    <span class="color-swatch"></span>
+                    <span class="color-name">Beige</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h3>Size</h3>
+                <div class="size-options">
+                  <label class="size-option">
+                    <input type="checkbox" name="size" value="xs" />
+                    <span>XS</span>
+                  </label>
+                  <label class="size-option">
+                    <input type="checkbox" name="size" value="s" />
+                    <span>S</span>
+                  </label>
+                  <label class="size-option">
+                    <input type="checkbox" name="size" value="m" />
+                    <span>M</span>
+                  </label>
+                  <label class="size-option">
+                    <input type="checkbox" name="size" value="l" />
+                    <span>L</span>
+                  </label>
+                  <label class="size-option">
+                    <input type="checkbox" name="size" value="xl" />
+                    <span>XL</span>
+                  </label>
+                </div>
+              </div>
+
+              <button class="btn btn--primary apply-filters">
+                Apply Filters
+              </button>
+            </div>
+          </aside>
+
+          <!-- Product Content -->
+          <div class="catalog-content">
+            <div class="catalog-toolbar">
+              <div class="active-filters">
+                <span class="filter-count">0 filters applied</span>
+                <div class="filter-tags">
+                  <!-- Filter tags will be dynamically added here -->
+                </div>
+              </div>
+              <div class="catalog-controls">
+                <div class="view-options">
+                  <button
+                    class="view-option active"
+                    data-view="grid"
+                    aria-label="Grid view"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="3" y="3" width="7" height="7"></rect>
+                      <rect x="14" y="3" width="7" height="7"></rect>
+                      <rect x="14" y="14" width="7" height="7"></rect>
+                      <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                  </button>
+                  <button
+                    class="view-option"
+                    data-view="list"
+                    aria-label="List view"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="8" y1="6" x2="21" y2="6"></line>
+                      <line x1="8" y1="12" x2="21" y2="12"></line>
+                      <line x1="8" y1="18" x2="21" y2="18"></line>
+                      <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                      <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                      <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div class="sort-options">
+                  <select name="sort" id="sort">
+                    <option value="featured">Featured</option>
+                    <option value="newest">Newest</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="products-grid" id="productsContainer">
+              <!-- Products will be dynamically loaded here -->
+            </div>
+
+            <div class="pagination">
+              <button class="pagination__prev" disabled>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                Previous
+              </button>
+              <div class="pagination__pages">
+                <button class="pagination__page active">1</button>
+                <button class="pagination__page">2</button>
+                <button class="pagination__page">3</button>
+                <span class="pagination__dots">...</span>
+                <button class="pagination__page">10</button>
+              </div>
+              <button class="pagination__next">
+                Next
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__column">
+            <div class="logo">MINIMA</div>
+            <p>Modern, minimalist clothing for the conscious consumer.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer__column">
+            <h3>Shop</h3>
+            <ul>
+              <li><a href="catalog.html?category=womens">Women</a></li>
+              <li><a href="catalog.html?category=mens">Men</a></li>
+              <li>
+                <a href="catalog.html?category=accessories">Accessories</a>
+              </li>
+              <li><a href="catalog.html?category=footwear">Footwear</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Sustainability</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2023 MINIMA. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Filters Drawer -->
+    <div class="mobile-filters-drawer" id="mobileFilters">
+      <div class="mobile-filters-header">
+        <h2>Filters</h2>
+        <button class="mobile-filters-close" aria-label="Close filters">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-filters-content">
+        <!-- Filter content will be cloned here from desktop filters -->
+      </div>
+      <div class="mobile-filters-footer">
+        <button class="btn btn--outline" id="clearMobileFilters">
+          Clear All
+        </button>
+        <button class="btn btn--primary" id="applyMobileFilters">
+          Apply Filters
+        </button>
+      </div>
+    </div>
+
+    <!-- Shared Components -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-overlay__content">
+        <button class="search-overlay__close" aria-label="Close search">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Search for products..."
+            aria-label="Search"
+          />
+          <button type="submit" aria-label="Submit search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </form>
+        <div class="search-results">
+          <!-- Search results will appear here -->
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <div class="mobile-nav__header">
+        <div class="logo">MINIMA</div>
+        <button class="mobile-nav__close" aria-label="Close menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="mobile-nav__content">
+        <ul class="mobile-nav__list">
+          <li class="mobile-nav__item">
+            <a href="catalog.html" class="mobile-nav__link active">Shop</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="about.html" class="mobile-nav__link">About</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="contact.html" class="mobile-nav__link">Contact</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="profile.html" class="mobile-nav__link">My Account</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="cart.html" class="mobile-nav__link">Cart</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="mobile-nav__footer">
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+              ></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/catalog.js"></script>
+  </body>
+</html>
